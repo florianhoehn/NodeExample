@@ -1,0 +1,32 @@
+<html>
+  <!-- HTML FOR APP -->
+  <div ng-app="ngApplication">
+    <div ng-controller="ngTestController">
+      {{text}}
+    </div>
+  </div>
+  
+  <!-- INCLUDE ANGULARJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+  
+  <!-- ACTUAL ANGULARJS APP -->
+  <script type="text/javascript">
+    var ngApplication = angular.module('ngApplication', []); //'ngResource'
+    
+    /*
+    ngApplication.service('HapiService', ['$resource', function($resource) {
+      return {
+        helloWorld: $resource('/hello')
+      }
+    }]);
+    */
+    
+    ngApplication.controller('ngTestController', ['$scope', '$http', function($scope, $http) {
+      var result = $http.get('/hello');
+      result.success(function(data) {
+        console.log(data);
+        $scope.text = data;
+      });
+    }]);
+  </script>
+</html>

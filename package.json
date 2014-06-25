@@ -1,0 +1,15 @@
+{
+  "name": "NodeExample",
+  "version": "0.0.1",
+  "description": "just an example",
+  "main": "index.js",
+  "dependencies": {
+    "hapi": "~6.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
